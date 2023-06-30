@@ -51,7 +51,7 @@ def get_profession_by_title(title):
 
 def check_fitness(student, profession):
     """
-    Проверяем что есть в стеке и чего не хватает для профы
+    Проверяет что есть в стэке и чего не хватает для профы
     """
     stud_skills = set(student["skills"])
     prof_skills = set(profession)
