@@ -1,8 +1,5 @@
 from functions import load_students, load_professions, get_student_by_pk, get_profession_by_title, check_fitness
 
-students_file = 'students.json'
-professions_file = 'professions.json'
-
 
 def main():
     """
