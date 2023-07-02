@@ -52,8 +52,8 @@ def check_fitness(student, profession):
     stud_skills = set(student["skills"])
     prof_skills = set(profession)
 
-    has = list(stud_skills & prof_skills)
-    lacks = list(prof_skills.difference(stud_skills))
+    has = stud_skills & prof_skills
+    lacks = prof_skills.difference(stud_skills)
     check_percent = round(len(has) / len(profession) * 100)
 
     check_dict = {
