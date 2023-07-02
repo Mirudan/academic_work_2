@@ -34,8 +34,6 @@ def get_student_by_pk(pk):
     for student in load_students(students_file):
         if pk == student['pk']:
             return student
-        else:
-            None
 
 
 def get_profession_by_title(title):
@@ -45,8 +43,6 @@ def get_profession_by_title(title):
     for title_dict in load_professions(professions_file):
         if title == title_dict['title']:
             return title_dict['skills']
-    else:
-        quit('У нас нет такой специальности')
 
 
 def check_fitness(student, profession):
@@ -55,10 +51,11 @@ def check_fitness(student, profession):
     """
     stud_skills = set(student["skills"])
     prof_skills = set(profession)
-    has = ', '.join(list(stud_skills & prof_skills))
-    professions = ', '.join(profession)
-    lacks = ', '.join(list(prof_skills.difference(stud_skills)))
-    check_percent = str(round(len(has) / len(professions) * 100)) + '%'
+
+    has = list(stud_skills & prof_skills)
+    lacks = list(prof_skills.difference(stud_skills))
+    check_percent = round(len(has) / len(profession) * 100)
+
     check_dict = {
         "has": has,
         "lacks": lacks,
